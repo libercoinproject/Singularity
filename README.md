@@ -1,5 +1,4 @@
 # Qwark-Wallet layouts
-=============================
 
 
 DARK
