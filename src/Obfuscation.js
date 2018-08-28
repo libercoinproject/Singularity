@@ -5,7 +5,7 @@ class Obfuscation extends React.Component {
     return (
       <div className="blockComponent">
         <div className="content">
-          <h2>Obfuscation</h2>
+          <h2 className="contentTitle">Obfuscation</h2>
         </div>
       </div>
     );

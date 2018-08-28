@@ -5,7 +5,7 @@ class Transactions extends React.Component {
     return (
       <div className="blockComponent">
         <div className="content">
-          <h2>Transactions</h2>
+          <h2 className="contentTitle">Transactions</h2>
         </div>
       </div>
     );

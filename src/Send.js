@@ -5,7 +5,7 @@ class Send extends React.Component {
     return (
       <div className="blockComponent">
         <div className="content">
-          <h2>Send</h2>
+          <h2 className="contentTitle">Send</h2>
         </div>
       </div>
     );

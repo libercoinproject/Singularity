@@ -5,7 +5,7 @@ class Voting extends React.Component {
     return (
       <div className="blockComponent">
         <div className="content">
-          <h2>Voting</h2>
+          <h2 className="contentTitle">Voting</h2>
         </div>
       </div>
     );

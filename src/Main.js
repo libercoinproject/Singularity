@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Dashboard from './Dashboard';
 import Addresses from './Addresses';
 import Receive from './Receive';
@@ -6,6 +6,7 @@ import Send from './Send';
 import Obfuscation from './Obfuscation';
 import Transactions from './Transactions';
 import Voting from "./Voting";
+import logo from "./Libercoin.png";
 
 class Main extends React.Component {
   constructor(props) {
@@ -36,29 +37,14 @@ class Main extends React.Component {
         return (
             <div className="Main">
                 <div className="pages">
-                    <ul type="none">
-                        <li>
-                          <button type="button" onClick={() => {this.renderContent('Dashboard')}}>Dashboard</button>
-                        </li>
-                        <li>
-                          <button type="button" onClick={() => {this.renderContent('Addresses')}}>My addresses</button>
-                        </li>
-                        <li>
-                          <button type="button" onClick={() => {this.renderContent('Receive')}}>Receive</button>
-                        </li>
-                        <li>
-                          <button type="button" onClick={() => {this.renderContent('Send')}}>Send</button>
-                        </li>
-                        <li>
-                          <button type="button" onClick={() => {this.renderContent('Obfuscation')}}>Obfuscation</button>
-                        </li>
-                        <li>
-                          <button type="button" onClick={() => {this.renderContent('Transactions')}}>Transactions</button>
-                        </li>
-                        <li>
-                          <button type="button" onClick={() => {this.renderContent('Voting')}}>Voting</button>
-                        </li>
-                    </ul>
+                  <img src={logo} />
+                  <p onClick={() => {this.renderContent('Dashboard')}}>Dashboard</p>
+                  <p onClick={() => {this.renderContent('Addresses')}}>My addresses</p>
+                  <p onClick={() => {this.renderContent('Receive')}}>Receive</p>
+                  <p onClick={() => {this.renderContent('Send')}}>Send</p>
+                  <p onClick={() => {this.renderContent('Obfuscation')}}>Obfuscation</p>
+                  <p onClick={() => {this.renderContent('Transactions')}}>Transactions</p>
+                  <p onClick={() => {this.renderContent('Voting')}}>Voting</p>
                 </div>
                 {this.state.Dashboard && <Dashboard/>}
                 {this.state.Addresses && <Addresses/>}

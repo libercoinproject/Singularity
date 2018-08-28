@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 class Addresses extends React.Component {
   render() {
     return (
       <div className="blockComponent">
         <div className="content">
-          <h2>Addresses</h2>
+          <h2 className="contentTitle">Addresses</h2>
         </div>
       </div>
     );

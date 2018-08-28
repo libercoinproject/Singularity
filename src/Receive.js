@@ -5,7 +5,7 @@ class Receive extends React.Component {
     return (
       <div className="blockComponent">
         <div className="content">
-          <h2>Receive</h2>
+          <h2 className="contentTitle">Receive</h2>
         </div>
       </div>
     );
