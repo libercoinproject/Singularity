@@ -6,7 +6,7 @@ import Send from './Send';
 import Obfuscation from './Obfuscation';
 import Transactions from './Transactions';
 import Voting from "./Voting";
-import logo from "./Libercoin.png";
+import logo from "./img/libercoin.png";
 
 class Main extends React.Component {
   constructor(props) {
