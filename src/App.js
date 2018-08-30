@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Main from './Main';
 import './App.css';
 
-const {app} = window.require('electron').remote;
+// const {app} = window.require('electron').remote;
 
 class App extends Component {
   render() {

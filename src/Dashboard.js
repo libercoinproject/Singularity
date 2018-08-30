@@ -3,7 +3,6 @@ import React from 'react';
 class Dashboard extends React.Component {
     render() {
         return (
-            <div className="blockComponent">
                 <div className="content">
                   <h2 className="contentTitle">Dashboard</h2>
                   <div className="blockRow">
@@ -34,7 +33,6 @@ class Dashboard extends React.Component {
                     </div>
                   </div>
                 </div>
-            </div>
         );
     }
 }

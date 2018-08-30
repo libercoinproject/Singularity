@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter, Link, Switch, Route } from 'react-router-dom';
 import Dashboard from './Dashboard';
 import Addresses from './Addresses';
 import Receive from './Receive';
@@ -11,49 +12,33 @@ import logo from "./img/libercoin.png";
 class Main extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-        Dashboard: true,
-        Addresses: false,
-        Receive: false,
-        Send: false,
-        Obfuscation: false,
-        Transactions: false,
-        Voting: false
-    };
-  }
-  renderContent = (page) => {
-    if (this.state[page] !== true){
-      let tempState = this.state;
-      for(let i in tempState){
-        tempState[i] = false
-      }
-      tempState[page] = true;
-      this.setState(() => {
-        return {tempState};
-      });
-    }
   };
+
   render() {
         return (
+          <BrowserRouter>
             <div className="Main">
                 <div className="pages">
                   <img src={logo} />
-                  <p onClick={() => {this.renderContent('Dashboard')}}>Dashboard</p>
-                  <p onClick={() => {this.renderContent('Addresses')}}>My addresses</p>
-                  <p onClick={() => {this.renderContent('Receive')}}>Receive</p>
-                  <p onClick={() => {this.renderContent('Send')}}>Send</p>
-                  <p onClick={() => {this.renderContent('Obfuscation')}}>Obfuscation</p>
-                  <p onClick={() => {this.renderContent('Transactions')}}>Transactions</p>
-                  <p onClick={() => {this.renderContent('Voting')}}>Voting</p>
+                  <Link to="/"><p>Dashboard</p></Link>
+                  <Link to="/addresses"><p>My addresses</p></Link>
+                  <Link to="/receive"><p>Receive</p></Link>
+                  <Link to="/send"><p>Send</p></Link>
+                  <Link to="/obfuscation"><p>Obfuscation</p></Link>
+                  <Link to="/transactions"><p>Transactions</p></Link>
+                  <Link to="/voting"><p>Voting</p></Link>
                 </div>
-                {this.state.Dashboard && <Dashboard/>}
-                {this.state.Addresses && <Addresses/>}
-                {this.state.Receive && <Receive/>}
-                {this.state.Send && <Send/>}
-                {this.state.Obfuscation && <Obfuscation/>}
-                {this.state.Transactions && <Transactions/>}
-                {this.state.Voting && <Voting/>}
+                  <Switch>
+                    <Route path="/" component={Dashboard} exact={true}/>
+                    <Route path="/receive" component={Receive}/>
+                    <Route path="/addresses" component={Addresses}/>
+                    <Route path="/send" component={Send}/>
+                    <Route path="/obfuscation" component={Obfuscation}/>
+                    <Route path="/transactions" component={Transactions}/>
+                    <Route path="/voting" component={Voting}/>
+                  </Switch>
             </div>
+          </BrowserRouter>
         );
     }
 }

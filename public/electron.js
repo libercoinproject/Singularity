@@ -13,7 +13,7 @@ require("update-electron-app")({
 });
 
 function createWindow() {
-  mainWindow = new BrowserWindow({ width: 800, height: 600 });
+  mainWindow = new BrowserWindow({ width: 800, height: 600, minWidth: 800, minHeight: 600 });
   mainWindow.loadURL(
     isDev
       ? "http://localhost:3000"
