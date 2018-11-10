@@ -1,4 +1,4 @@
-# Qwark-Wallet
+# Singularity
 ### Developed using Electron + React
 ***
 **Run dev build:**
