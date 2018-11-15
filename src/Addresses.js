@@ -5,7 +5,7 @@ class Addresses extends React.Component {
   render() {
     return (
         <div class="content">
-          <div class="adresses">
+          <div class="adresses flex jc-c fl-column">
             <div class="flex ali-c">
               <h1 class="main-heading">Addresses</h1>
               <p class="adresses__sorting"><span>Sort by:</span> /function</p>
