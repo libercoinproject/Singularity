@@ -1,15 +1,36 @@
 @font-face {
-    font-family: "Libercoin_Italic";
-    src: url("./fonts/Libercoin_Light_Italic.otf") format("opentype");
+    font-family: "GothamPro";
+    src: url("./fonts/GothamPro.ttf");
 
-    font-family: "Libercoin_Regular";
-    src: url("./fonts/Libercoin_Regular.otf") format("opentype");
+    font-family: "GothamMedium";
+    src: url("./fonts/GothamPro-Medium.ttf");
+}
 
-    font-family: "Libercoin_Bold";
-    src: url("./fonts/Libercoin_Bold.otf") format("opentype");
+@font-face {
+  font-family: "GothamBold";
+  src: url("./fonts/GothamPro_Bold.ttf");
+}
 
-    font-family: "Libercoin_Semi-Bold";
-    src: url("./fonts/Libercoin_Semi-Bold.otf") format("opentype");
+@font-face {
+  font-family: "FASolid";
+  src: url("./fonts/fa-solid-900.ttf");
+}
+
+@font-face {
+  font-family: "GothamLight";
+  src: url("./fonts/GothamPro-Light.ttf");
+}
+
+h1,h2,h3,h4 {
+  font-family: "GothamBold";
+}
+
+p {
+  font-family: "GothamLight";
+}
+
+html {
+  font-size: 16px;
 }
 
 #root {
@@ -36,6 +57,151 @@
   display: flex;
 }
 
+.main__logo {
+  height: 70px;
+  width: auto;
+  float: left;
+}
+
+.main__logo-text {
+  color: #51ff90;
+  font-size: 30px;
+  margin-left: 12px;
+  font-family: "GothamLight";
+}
+
+.main__menu-list-item {
+  font-size: 24px;
+  margin-top: 8px;
+}
+
+.main__menu-list-item span {
+  font-family: FASolid;
+  color: #51ff90;
+  margin-right: 17px;
+}
+
+.dashboard__heading {
+  margin-top: 70px;
+  margin-bottom: 8px;
+}
+
+.dashboard__heading:nth-child(3) {
+  margin-top: 35px;
+}
+
+.dashboard__price-flex-block {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+}
+
+.dashboard__balance-block {
+  width: 39%;
+  height: 170px;
+  padding-left: 25px;
+  background-color: #303030;
+}
+
+.dashboard__balance-text {
+  font-size: 18px;
+  font-family: "GothamLight";
+  margin-top: 23px;
+  margin-bottom: 0;
+}
+
+.dashboard__balance-text:nth-child(3) {
+  color: #c5c3c3;
+}
+
+.dashboard__balance {
+  margin-top: 14px;
+  margin-bottom: 30px;
+  font-size: 49px;
+  font-family: "GothamBold";
+}
+
+.dashboard__price-exchange-column-block {
+  height: 170px;
+  width: 40%;
+  margin-left: 5%;
+}
+
+.dashboard__price-exhange-block {
+  width: 100%;
+  height: 30.25%;
+  margin-bottom: 3%;
+  background-color: #00c853;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dashboard__price-exhange-block span {
+  font-family: "FASolid";
+  margin-right: 15px;
+  font-size: 35px;
+}
+
+.exchange__price {
+  font-size: 25px;
+  font-family: "GothamMedium";
+  margin-left: 35px;
+}
+
+.dashboard__price-exhange-block:last-child {
+  margin-bottom: 0;
+  background-color: #e53935;
+}
+
+.dashboard__transaction-item {
+  width: 88%;
+  height: 80px;
+  background-color: #303030;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.dashboard__transaction-item:nth-child(5) .dashboard__trans-type-block {
+  background-color: #53b791;
+}
+
+.dashboard__transaction-item:nth-child(8) .dashboard__trans-type-block {
+  background-color: #53b791;
+}
+
+.dashboard__trans-type-block {
+  margin-left: 20px;
+  height: 45%;
+  width: 20%;
+  background-color: #00c853;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: center;
+  -ms-align-items: center;
+  align-items: center;
+}
+
+.dashboard__wallet-adress {
+  font-size: 13px;
+}
+
+.dashboard__trans-amount {
+  font-size: 30px;
+  font-family: "GothamBold";
+  margin-right: 20px;
+}
+
+
 .blockComponent {
   display: flex;
   width: 70%;
@@ -47,7 +213,7 @@
     align-items: center;
     justify-content: center;
     height: 100%;
-    width: 30%;
+    width: 40%;
 }
 
 .pages > p {
@@ -58,10 +224,16 @@
     width: 100%;
 }
 
+.dashboard {
+  width: calc(100% - 40px);
+  padding-left: 40px;
+}
+
 .blockRow {
     display: flex;
     flex-direction: row;
     height: 50%;
+    margin-top: -16px;
 }
 
 .blockBalance {
@@ -70,7 +242,7 @@
     width: 50%;
     height: 50%;
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     flex-direction: column;
 }
@@ -91,7 +263,7 @@
     flex-direction: column;
     align-content: space-around;
     justify-content: space-around;
-    height: 25%;
+    height: 30%;
 }
 
 .blockPriceElement {
@@ -101,10 +273,30 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: "GothamMedium";
+    font-size: 20px;
 }
 
 .blockBalanceElement{
-    margin: auto;
+    margin-left: 20px;
+}
+
+.blockBalanceElement:nth-child(1) {
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+.blockBalanceElement:nth-child(2) {
+  font-size: 50px;
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+.blockBalanceElement:nth-child(3) {
+  font-size: 19px;
+  color: #c5c3c3;
+  margin-left: 20px;
 }
 
 .blockTransaction {
@@ -116,7 +308,7 @@
     align-items: center;
     align-content: space-between;
     justify-content: space-between;
-    height: 30%;
+    height: 38%;
 }
 
 .blockTransactionElement {
@@ -128,15 +320,19 @@
     width: 20%;
 }
 
+.blockTransactionElement:nth-child(2) {
+  font-size: 12px;
+}
+
 .blockTransactionSend {
     margin-left: 2%;
     margin-right: 2%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-left: 1%;
-    padding-right: 1%;
-    height: 70%;
+    padding-left: 3%;
+    padding-right: 3%;
+    height: 50%;
     width: 10%;
     background-color: #00c853;
 }
@@ -147,21 +343,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-left: 1%;
-    padding-right: 1%;
-    height: 70%;
+    padding-left: 3%;
+    padding-right: 3%;
+    height: 50%;
     width: 10%;
     background-color: #53b791;
 }
 
 .contentTitle {
-    margin-top: 2%;
     margin-left: 4%;
-    font-family: Libercoin_Bold, monospace;
+    font-family: "GothamBold";
+    margin-top: 25px;
+    margin-bottom: 0;
+    font-size: 30px;
 }
 
 #root {
-    font-family: Libercoin_Semi-Bold, monospace;
+    font-family: "GothamPro";
 }
 
 a {

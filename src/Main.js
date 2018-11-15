@@ -7,7 +7,11 @@ import Send from './Send';
 import Obfuscation from './Obfuscation';
 import Transactions from './Transactions';
 import Voting from "./Voting";
-import logo from "./img/libercoin.png";
+import logo from "./img/libercoin_logo.png";
+const styleLogo = {
+  display: 'flex',
+  alignItems: 'center',
+}
 
 class Main extends React.Component {
   constructor(props) {
@@ -19,14 +23,17 @@ class Main extends React.Component {
           <BrowserRouter>
             <div className="Main">
                 <div className="pages">
-                  <img src={logo} />
-                  <Link to="/"><p>Dashboard</p></Link>
-                  <Link to="/addresses"><p>My addresses</p></Link>
-                  <Link to="/receive"><p>Receive</p></Link>
-                  <Link to="/send"><p>Send</p></Link>
-                  <Link to="/obfuscation"><p>Obfuscation</p></Link>
-                  <Link to="/transactions"><p>Transactions</p></Link>
-                  <Link to="/voting"><p>Voting</p></Link>
+                  <div style={styleLogo}>
+                    <img src={logo} className="main__logo"/>
+                    <p className="main__logo-text">Libercoin</p>
+                  </div>
+                  <Link to="/"><p className="main__menu-list-item"><span></span>Dashboard</p></Link>
+                  <Link to="/addresses"><p className="main__menu-list-item"><span></span>My addresses</p></Link>
+                  <Link to="/receive"><p className="main__menu-list-item"><span></span>Receive</p></Link>
+                  <Link to="/send"><p className="main__menu-list-item"><span></span>Send</p></Link>
+                  <Link to="/obfuscation"><p className="main__menu-list-item"><span></span>Obfuscation</p></Link>
+                  <Link to="/transactions"><p className="main__menu-list-item"><span></span>Transactions</p></Link>
+                  <Link to="/voting"><p className="main__menu-list-item"><span></span>Voting</p></Link>
                 </div>
                   <Switch>
                     <Route path="/" component={Dashboard} exact={true}/>

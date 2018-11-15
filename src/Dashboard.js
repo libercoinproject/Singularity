@@ -3,33 +3,65 @@ import React from 'react';
 class Dashboard extends React.Component {
     render() {
         return (
-                <div className="content">
-                  <h2 className="contentTitle">Dashboard</h2>
-                  <div className="blockRow">
-                    <div className="blockBalance">
-                      <p className="blockBalanceElement">Total balance</p>
-                      <h2 className="blockBalanceElement">123 LBR</h2>
-                      <p className="blockBalanceElement">50 LBR pending</p>
-                    </div>
-                    <div className="blockPrice">
-                        <div className="blockPriceElement">
-                          <p>10 $</p>
+                <div class="dashboard">
+                  <div class="content">
+                    <h1 class="dashboard__heading">Dashboard</h1>
+                    <div class="dashboard__price-flex-block">
+                      <div class="dashboard__balance-block">
+                        <p class="dashboard__balance-text">Total Balance</p>
+                        <p class="dashboard__balance">123 LBR</p>
+                        <p class="dashboard__balance-text">9.45 LBR pending</p>
+                      </div>
+                      <div class="dashboard__price-exchange-column-block">
+                        <div class="dashboard__price-exhange-block">
+                          <p class="exchange__price">1245$</p>
+                          <span></span>
                         </div>
-                        <div className="blockPriceElement">600 R</div>
-                        <div className="blockPriceElement">0.1 BTC</div>
-                  </div>
-                  </div>
-                  <h2 className="contentTitle">Last transactions</h2>
-                  <div className="blockTransactionColumn">
-                    <div className="blockTransaction">
-                      <p className="blockTransactionSend">Send</p>
-                      <p className="blockTransactionElement">Hash</p>
-                      <p className="blockTransactionElement">Sum 1</p>
+                        <div class="dashboard__price-exhange-block">
+                          <p class="exchange__price">1091.32€</p>
+                          <span></span>
+                        </div>
+                        <div class="dashboard__price-exhange-block">
+                          <p class="exchange__price">0.12875 BTC</p>
+                          <span></span>
+                        </div>
+                      </div>
                     </div>
-                    <div className="blockTransaction">
-                      <p className="blockTransactionReceive">Receive</p>
-                      <p className="blockTransactionElement">Hash</p>
-                      <p className="blockTransactionElement">Sum 2</p>
+                    <h1 class="dashboard__heading">Transactions</h1>
+                    <div class="dashboard__transaction-item">
+                      <div class="dashboard__trans-type-block">
+                        <p class="dashboard__trans-type">Send</p>
+                      </div>
+                      <p class="dashboard__wallet-adress">ZVZrbLt2Mmu3rSzcGxHoFNKo3shyC6K81M</p>
+                      <p class="dashboard__trans-amount">12.5 LBR</p>
+                    </div>
+                    <div class="dashboard__transaction-item">
+                      <div class="dashboard__trans-type-block">
+                        <p class="dashboard__trans-type">Receive</p>
+                      </div>
+                      <p class="dashboard__wallet-adress">ZVZrbLt2Mmu3rSzcGxHoFNKo3shyC6K81M</p>
+                      <p class="dashboard__trans-amount">5.4 LBR</p>
+                    </div>
+                    <div class="dashboard__transaction-item">
+                      <div class="dashboard__trans-type-block">
+                        <p class="dashboard__trans-type">Send</p>
+                      </div>
+                      <p class="dashboard__wallet-adress">ZVZrbLt2Mmu3rSzcGxHoFNKo3shyC6K81M</p>
+                      <p class="dashboard__trans-amount">206 LBR</p>
+                    </div>
+                    <div class="dashboard__transaction-item">
+                      <div class="dashboard__trans-type-block">
+                        <p class="dashboard__trans-type">Send</p>
+                      </div>
+                      <p class="dashboard__wallet-adress">ZVZrbLt2Mmu3rSzcGxHoFNKo3shyC6K81M</p>
+                      <p class="dashboard__trans-amount">22.12 LBR</p>
+                    </div>
+                    <div class="dashboard__transaction-item">
+                      <div class="dashboard__trans-type-block">
+                        <p class="dashboard__trans-type">Receive</p>
+                      </div>
+                      <p class="dashboard__wallet-adress">ZVZrbLt2Mmu3rSzcGxHoFNKo3shyC6K81M</p>
+                      <p class="dashboard__trans-amount">100.01 LBR</p>
                     </div>
                   </div>
                 </div>
