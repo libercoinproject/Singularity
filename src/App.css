@@ -2,8 +2,12 @@
     font-family: "GothamPro";
     src: url("./fonts/GothamPro.ttf");
 
-    font-family: "GothamMedium";
-    src: url("./fonts/GothamPro-Medium.ttf");
+
+}
+
+@font-face {
+  font-family: "GothamMedium";
+  src: url("./fonts/GothamPro-Medium.ttf");
 }
 
 @font-face {
@@ -31,6 +35,19 @@ p {
 
 html {
   font-size: 16px;
+}
+
+.flex {
+  display: flex;
+}
+
+.ali-c {
+  -ms-align-items: center;
+  align-items: center;
+}
+
+.jc-c {
+  justify-content: center;
 }
 
 #root {
@@ -81,7 +98,7 @@ html {
   margin-right: 17px;
 }
 
-.dashboard__heading {
+.main-heading {
   margin-top: 70px;
   margin-bottom: 8px;
 }
@@ -201,6 +218,126 @@ html {
   margin-right: 20px;
 }
 
+.adresses .main-heading {
+  margin-top: 0;
+}
+
+.adresses .flex:nth-child(1) {
+  margin-top: 70px;
+}
+
+.adresses__sorting {
+  margin-top: 0px;
+  margin-left: 10%;
+  margin-bottom: 0;
+  font-family: "GothamPro";
+  font-size: 18px;
+}
+
+.adresses__sorting span {
+  font-family: "GothamMedium";
+}
+
+.adresses__card-flex-block {
+  width: 82%;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: auto;
+}
+
+.adresses__cards {
+  width: calc(47% - 20px);
+  height: 170px;
+  background-color: #53b791;
+  overflow: hidden;
+  position: relative;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+.adresses__cards:nth-child(1), .adresses__cards:nth-child(2) {
+  margin-bottom: 25px;
+}
+
+.adresses__back-logo {
+  height: 110%;
+  width: auto;
+  z-index: 1;
+  opacity: .25;
+  position: absolute;
+  top: 0px;
+  right: -15%;
+}
+
+.adresses__card-amount {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 45px;
+  font-family: "GothamBold";
+  z-index: 10;
+  position: relative;
+}
+
+.adresses__adress {
+  font-size: 11px;
+}
+
+.adresses__wallet-name {
+  font-family: "GothamPro";
+  margin-top: 50px;
+  font-size: 20px;
+}
+
+.adresses__add-btn-flex-block {
+  height: 405px;
+  width: 100px;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: center;
+  -ms-align-items: center;
+  align-items: center;
+}
+
+.adresses__add-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #00c853;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: center;
+  -ms-align-items: center;
+  align-items: center;
+  font-size: 30px;
+  cursor: default;
+}
+
+.adresses__circles-block {
+  width: 82%;
+  height: 25px;
+  margin-top: 20px;
+}
+
+.adresses__circle {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: white;
+  margin-right: 10px;
+}
+
+.adresses__circle:first-child {
+  background-color: #51ff90
+}
+
+.adresses__circle:last-child {
+  margin-right: 0;
+}
 
 .blockComponent {
   display: flex;
@@ -224,7 +361,7 @@ html {
     width: 100%;
 }
 
-.dashboard {
+.dashboard, .adresses {
   width: calc(100% - 40px);
   padding-left: 40px;
 }
