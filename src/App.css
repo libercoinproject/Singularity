@@ -341,6 +341,118 @@ html {
   margin-right: 0;
 }
 
+.receive .main-heading {
+  margin-top: 0;
+}
+
+.receive__wallet-block {
+  width: calc(60% - 20px);
+  padding-left: 20px;
+  height: 120px;
+  background-color: #303030;
+  justify-content: center;
+}
+
+.receive__wallet-name {
+  font-family: "GothamPro";
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-bottom: 20px;
+}
+
+.receive__adress {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.receive__adress span {
+  font-family: "FASolid";
+  color: #53b791;
+  margin-left: 6px;
+  cursor: default;
+  -webkit-transition: color .25s ease;
+  -o-transition: color .25s ease;
+  transition: color .25s ease;
+}
+
+.receive__adress span:hover {
+  color: #00C853;
+  -webkit-transition: color .25s ease;
+  -o-transition: color .25s ease;
+  transition: color .25s ease;
+}
+
+.receive__select-btn {
+  margin-left: 30px;
+  width: 200px;
+  height: 53px;
+  background-color: #00c853;
+  text-transform: uppercase;
+}
+
+.receive__btn {
+  width: 150px;
+  height: 46px;
+  background-color: #00c853;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+.receive__btn:nth-child(1) {
+  margin-right: 15px;
+}
+
+.receive__heading {
+  margin-top: 50px;
+  margin-bottom: 0px;
+}
+
+.text-input {
+  background-color: #303030;
+  outline: none;
+  border: 0;
+  font-family: "GothamPro";
+}
+
+.receive__input {
+  width: 260px;
+  padding-left: 10px;
+  height: 50px;
+  font-size: 20px;
+  color: white;
+}
+
+.receive__input:valid {
+  color: #bbbaba;
+}
+
+.receive__currency-name-f-input {
+  font-size: 24px;
+  font-family: "GothamBold";
+  color: white;
+  margin-left: 15px;
+}
+
+.receive__qr-code {
+  width: 170px;
+  height: 170px;
+  margin-top: 30px;
+}
+
+.receive__qr-adress {
+  margin-left: 20px;
+  font-family: "GothamPro";
+  font-size: 18px;
+  margin-top: 30px;
+}
+
+.receive__qr-adress span {
+  font-size: 22px;
+  font-family: "GothamMedium";
+}
+
 .blockComponent {
   display: flex;
   width: 70%;
@@ -361,11 +473,16 @@ html {
 
 .content {
     width: 100%;
+    height: 100%;
 }
 
-.dashboard, .adresses {
+.dashboard, .adresses, .receive {
   width: calc(100% - 40px);
   padding-left: 40px;
+  height: 100%;
+}
+
+.receive {
   height: 100%;
 }
 
