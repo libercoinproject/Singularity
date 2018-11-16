@@ -56,7 +56,7 @@ html {
   flex-direction: column;
 }
 
-.dashboard, .adresses, .receive, .send {
+.dashboard, .adresses, .receive, .send, .obfuscation {
   width: calc(100% - 40px);
   padding-left: 40px;
   height: 100%;
@@ -491,11 +491,11 @@ html {
   justify-content: flex-end;
 }
 
-.send__input:nth-child(2) {
+.send .send__input:nth-child(2) {
   margin-bottom: 5px;
 }
 
-.flex .send__input:nth-child(1) {
+.send .flex .send__input:nth-child(1) {
   width: 250px;
 }
 
@@ -514,6 +514,56 @@ html {
   height: 50px;
   margin-top: 17px;
   font-size: 16px;
+}
+
+.obfuscation .main-heading {
+  margin-top: 0;
+}
+
+.obfuscation__question-block {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  background-color: #53b791;
+}
+
+.obfuscation__question-block span {
+  margin-top: 3px;
+}
+
+.obfuscation__label {
+  margin-bottom: 7px;
+  font-family: "GothamMedium";
+}
+
+.obfuscation .adresses__circles-block {
+  margin-top: 0;
+}
+
+.obfuscation__inputs-flex div:nth-child(1) {
+  margin-right: 50px;
+}
+
+.obfuscation__input {
+  height: 45px;
+  width: 200px;
+  font-size: 20px;
+  padding-left: 15px;
+}
+
+.obfuscation .receive__currency-name-f-input {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.obfuscation .flex .receive__btn {
+  margin-top: 20px;
+}
+
+.obfuscation .flex .receive__btn:nth-child(1) {
+  margin-right: 15px;
 }
 
 .blockComponent {
