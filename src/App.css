@@ -56,6 +56,12 @@ html {
   flex-direction: column;
 }
 
+.dashboard, .adresses, .receive, .send {
+  width: calc(100% - 40px);
+  padding-left: 40px;
+  height: 100%;
+}
+
 #root {
   position: fixed;
   top: 0;
@@ -414,6 +420,8 @@ html {
   outline: none;
   border: 0;
   font-family: "GothamPro";
+  color: white;
+  resize: none;
 }
 
 .receive__input {
@@ -424,7 +432,7 @@ html {
   color: white;
 }
 
-.receive__input:valid {
+.text__input:valid {
   color: #bbbaba;
 }
 
@@ -453,6 +461,61 @@ html {
   font-family: "GothamMedium";
 }
 
+.send__flex-cards {
+  width: 82%;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: space-between;
+}
+
+.send .adresses__circles-block {
+  margin-top: 0;
+}
+
+.send__subheading {
+  font-family: "GothamMedium";
+  font-size: 26px;
+  margin-bottom: 7px;
+}
+
+.send__input {
+  width: 500px;
+  height: 48px;
+  font-size: 20px;
+  font-family: "GothamPro";
+  padding-left: 10px;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.send__input:nth-child(2) {
+  margin-bottom: 5px;
+}
+
+.flex .send__input:nth-child(1) {
+  width: 250px;
+}
+
+.send__input:valid {
+  color: #bbbaba;
+}
+
+.send__textarea {
+  font-size: 18px;
+  padding: 10px;
+  font-family: "GothamPro";
+}
+
+.send .receive__btn {
+  width: 200px;
+  height: 50px;
+  margin-top: 17px;
+  font-size: 16px;
+}
+
 .blockComponent {
   display: flex;
   width: 70%;
@@ -474,12 +537,6 @@ html {
 .content {
     width: 100%;
     height: 100%;
-}
-
-.dashboard, .adresses, .receive {
-  width: calc(100% - 40px);
-  padding-left: 40px;
-  height: 100%;
 }
 
 .receive {
