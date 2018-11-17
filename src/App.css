@@ -56,7 +56,15 @@ html {
   flex-direction: column;
 }
 
-.dashboard, .adresses, .receive, .send, .obfuscation {
+.green {
+  color: #00c853;
+}
+
+.red {
+  color: #ef5350;
+}
+
+.dashboard, .adresses, .receive, .send, .obfuscation, .transactions, .voting {
   width: calc(100% - 40px);
   padding-left: 40px;
   height: 100%;
@@ -566,6 +574,87 @@ html {
   margin-right: 15px;
 }
 
+.transactions .dashboard__transaction-item:nth-child(3) .dashboard__trans-type-block {
+  background-color: #53b791;
+}
+
+.voting__input-search-block {
+  width: 50%;
+  height: 50px;
+  position: relative;
+}
+
+.voting__search-input {
+  width: calc(100% - 15px);
+  height: 100%;
+  font-size: 20px;
+  padding-left: 15px;
+}
+
+.voting__search-icon {
+  position: absolute;
+  color: #00c853;
+  font-size: 22px;
+  font-family: "FASolid";
+  right: 15px;
+  cursor: default;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.voting .receive__btn {
+  height: 45px;
+  width: 200px;
+  margin-left: 30px;
+}
+
+.voting__item {
+  width: 70%;
+  background-color: #303030;
+  height: 110px;
+  margin-top: 20px;
+  justify-content: space-around;
+}
+
+.voting__name {
+  font-size: 20px;
+  font-family: "GothamMedium";
+}
+
+.voting__vote-preview-params {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.voting__vote-preview-params span {
+  font-family: "GothamMedium";
+}
+
+.voting__res-circle {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  background-color: #00c853;
+}
+
+.voting__btn-vote {
+  width: 100px;
+  height: 32px;
+  background-color: #00c853;
+  margin-top: 7px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.voting__preview-percent-res {
+  font-size: 22px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .blockComponent {
   display: flex;
   width: 70%;
@@ -730,3 +819,5 @@ a {
     text-decoration: none;
     color: white;
 }
+
+/* circles CSS */
