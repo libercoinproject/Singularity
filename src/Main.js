@@ -7,6 +7,7 @@ import Send from './Send';
 import Obfuscation from './Obfuscation';
 import Transactions from './Transactions';
 import Voting from "./Voting";
+import LMessage from "./LMessage"
 import logo from "./img/libercoin_logo.png";
 const styleLogo = {
   display: 'flex',
@@ -34,6 +35,7 @@ class Main extends React.Component {
                   <Link to="/obfuscation"><p className="main__menu-list-item"><span></span>Obfuscation</p></Link>
                   <Link to="/transactions"><p className="main__menu-list-item"><span></span>Transactions</p></Link>
                   <Link to="/voting"><p className="main__menu-list-item"><span></span>Voting</p></Link>
+                  <Link to="/lmessage"><p className="main__menu-list-item"><span></span>LMessage</p></Link>
                 </div>
                   <Switch>
                     <Route path="/" component={Dashboard} exact={true}/>
@@ -43,6 +45,7 @@ class Main extends React.Component {
                     <Route path="/obfuscation" component={Obfuscation}/>
                     <Route path="/transactions" component={Transactions}/>
                     <Route path="/voting" component={Voting}/>
+                    <Route path="/lmessage" component={LMessage}/>
                   </Switch>
             </div>
           </BrowserRouter>
