@@ -79,7 +79,7 @@ html {
   font-family: "GothamMedium"
 }
 
-.dashboard, .adresses, .receive, .send, .obfuscation, .transactions, .voting, .lmessage, .agora {
+.dashboard, .adresses, .receive, .send, .obfuscation, .transactions, .voting, .lmessage, .agora, .libernodes, .status, .settings {
   width: calc(100% - 40px);
   padding-left: 40px;
   height: 100%;
@@ -222,13 +222,18 @@ html {
   margin-bottom: 20px;
 }
 
-.dashboard__transaction-item:nth-child(5) .dashboard__trans-type-block {
+.dashboard .dashboard__transaction-item:nth-child(5) .dashboard__trans-type-block {
   background-color: #53b791;
 }
 
-.dashboard__transaction-item:nth-child(8) .dashboard__trans-type-block {
+.transactions .dashboard__transaction-item:nth-child(5) .dashboard__trans-type-block {
   background-color: #53b791;
 }
+
+.dashboard .dashboard__transaction-item:nth-child(8) .dashboard__trans-type-block {
+  background-color: #53b791;
+}
+
 
 .dashboard__trans-type-block {
   margin-left: 20px;
@@ -255,6 +260,11 @@ html {
 
 .adresses .main-heading {
   margin-top: 0;
+}
+
+.libernodes .main-heading {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .adresses__sorting {
@@ -929,6 +939,63 @@ html {
   font-size: 12px;
 }
 
+.libernodes__flex-heading {
+  margin-top: 70px;
+  margin-bottom: 20px;
+}
+
+.libernodes__btn {
+  width: 170px;
+  height: 50px;
+  background-color: #00c853;
+  margin-left: 25px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.libernodes .dashboard__transaction-item {
+  height: 110px;
+}
+
+.libernodes__items-subheading {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 0px;
+  color: #c5c3c3;
+  font-family: "GothamPro";
+}
+
+.libernodes .dashboard__transaction-item div:nth-child(1) {
+  margin-left: 40px;
+}
+
+.libernodes .dashboard__transaction-item div:last-child {
+  margin-right: 40px;
+}
+
+.libernodes__ip-adress, .libernodes__status {
+  font-size: 20px;
+  margin-top: 2px;
+  margin-bottom: 0;
+  font-family: "GothamMedium";
+}
+
+.libernodes__status {
+  color: #00c853;
+  font-size: 22px;
+}
+
+.libernodes__adress {
+  font-size: 16px;
+  margin-top: 2px;
+  margin-bottom: 0;
+  font-family: "GothamMedium"
+}
+
+.libernodes__adress span:nth-child(2) {
+  display: none;
+}
+
 .blockComponent {
   display: flex;
   width: 70%;
@@ -1101,6 +1168,16 @@ a {
   }
 }
 
+@media screen and (max-width: 1200px) {
+  .libernodes__adress {
+    font-size: 13px;
+    font-family: "GothamPro"
+  }
+  .libernodes__status {
+    font-size: 20px;
+  }
+}
+
 @media screen and (max-width: 1100px) {
   .lmessage__contact-adress span {
     display: none;
@@ -1126,6 +1203,12 @@ a {
   }
   .receive__adress {
     font-size: 14px;
+  }
+  .libernodes__adress span:nth-child(2) {
+    display: inline-block;
+  }
+  .libernodes__adress span:nth-child(1) {
+    display: none;
   }
 }
 
