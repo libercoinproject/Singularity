@@ -996,6 +996,43 @@ html {
   display: none;
 }
 
+.status__subheading {
+  margin-bottom: 5px;
+  font-size: 26px;
+  font-family: "GothamPro";
+}
+
+.status__data {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 30px;
+  font-family: "GothamMedium";
+  color: #00c853;
+}
+
+.status__data span {
+  color: white;
+}
+
+.status .main-heading {
+  margin-top: 0;
+}
+
+/*.status__flex1, .status__flex2 {
+  width: 50%;
+}*/
+
+.status__flex2 {
+  height: 300px;
+  width: 650px;
+  padding-left: 7%;
+}
+
+#myChart {
+  margin-right: 50px;
+}
+
+
 .blockComponent {
   display: flex;
   width: 70%;
