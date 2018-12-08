@@ -5,7 +5,7 @@ class Dashboard extends React.Component {
         return (
                 <div class="dashboard">
                   <div class="content">
-                    <h1 class="dashboard__heading">Dashboard</h1>
+                    <h1 class="main-heading">Dashboard</h1>
                     <div class="dashboard__price-flex-block">
                       <div class="dashboard__balance-block">
                         <p class="dashboard__balance-text">Total Balance</p>
