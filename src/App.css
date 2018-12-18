@@ -135,6 +135,7 @@ html {
 .main-heading {
   margin-top: 70px;
   margin-bottom: 8px;
+  white-space: nowrap;
 }
 
 .dashboard__heading:nth-child(3) {
@@ -209,6 +210,7 @@ html {
 }
 
 .dashboard__transaction-item {
+  position: relative;
   width: 88%;
   height: 80px;
   background-color: #303030;
@@ -968,7 +970,7 @@ html {
   font-family: "GothamPro";
 }
 
-.libernodes .dashboard__transaction-item div:nth-child(1) {
+.libernodes .dashboard__transaction-item div:nth-child(2) {
   margin-left: 40px;
 }
 
@@ -999,6 +1001,10 @@ html {
   display: none;
 }
 
+.libernodes__mobile-active {
+  display: none;
+}
+
 .status__subheading {
   margin-bottom: 5px;
   font-size: 26px;
@@ -1022,9 +1028,10 @@ html {
 }
 
 .status__flex2 {
-  height: 300px;
-  width: 650px;
   padding-left: 7%;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .settings__lable {
@@ -1121,6 +1128,7 @@ html {
 
 #myChart {
   margin-right: 50px;
+  margin-bottom: 20px;
 }
 
 
@@ -1161,6 +1169,9 @@ a {
   .lmessage__contact-item, .lmessage__message-item {
     width: 90%;
   }
+  .voting__item {
+    width: 90%;
+  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -1171,11 +1182,24 @@ a {
   .libernodes__status {
     font-size: 20px;
   }
+  .agora__subheading {
+    font-size: 18px;
+  }
 }
 
 @media screen and (max-width: 1100px) {
   .lmessage__contact-adress span {
     display: none;
+  }
+  .agora__market-items {
+    width: 47%;
+  }
+  .agora__delivery-select {
+    width: 110%;
+  }
+  .agora__country-flag {
+    height: 35%;
+    margin-right: 10px;
   }
 }
 
@@ -1205,12 +1229,30 @@ a {
   .libernodes__adress span:nth-child(1) {
     display: none;
   }
+  .adresses__cards {
+    width: calc(48.5% - 20px);
+  }
+  .send__input {
+    width: 380px;
+  }
+  .obfuscation__inputs-flex {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .agora__price-block {
+    display: none;
+  }
+  #myChart, #myChart2 {
+    display: none;
+    visibility: hidden;
+  }
+  .settings__right {
+    padding-left: 60px;
+  }
 }
 
 @media screen and (max-width: 900px) {
-  .voting__vote-preview-params {
-    display: none;
-  }
   .exchange__price {
     font-size: 22px;
   }
@@ -1218,9 +1260,43 @@ a {
     font-size: 11px;
   }
   .dashboard__trans-amount {
-    font-size: 20px;
+    font-size: 16px;
   }
   .receive__adress {
     font-size: 12px;
+  }
+  .adresses .adresses__cards {
+    width: calc(80% - 20px);
+  }
+  .adresses .adresses__cards:nth-child(4) {
+    display: none;
+  }
+  .adresses .adresses__cards:nth-child(3) {
+    display: none;
+  }
+  .receive__select-btn {
+    width: 173px;
+    height: 46px;
+    font-size: 14px;
+  }
+  .libernodes__mobile-active {
+    width: 10px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    background-color: #00c853;
+    display: block;
+  }
+  .libernodes .dashboard__transaction-item div:nth-child(2) {
+    margin-left: 40px;
+  }
+  .libernodes .dashboard__transaction-item div:nth-child(3) {
+    display: none;
+  }
+  .settings__right .settings__btn {
+    width: 180px;
+  }
+  .settings__right {
+    padding-left: 30px;
   }
 }

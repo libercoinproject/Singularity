@@ -27,7 +27,7 @@ class Agora extends React.Component {
                 <h3 className="subheading agora__subheading">Product name</h3>
                 <input type="text" className="text-input agora__input"/>
               </div>
-              <div>
+              <div className="agora__price-block">
                 <h3 className="subheading agora__subheading">Price</h3>
                 <input type="text" className="text-input agora__input"/>
               </div>

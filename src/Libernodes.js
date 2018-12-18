@@ -10,6 +10,7 @@ class Libernodes extends React.Component {
               <div class="libernodes__btn flex jc-c ali-c">Host your node</div>
             </div>
             <div class="dashboard__transaction-item flex jc-b">
+              <div class="libernodes__mobile-active"></div>
               <div class="flex fl-column jc-c">
                 <p class="libernodes__items-subheading">IP Adress</p>
                 <p class="libernodes__ip-adress">192.228.420.74</p>
@@ -24,6 +25,7 @@ class Libernodes extends React.Component {
               </div>
             </div>
             <div class="dashboard__transaction-item flex jc-b">
+              <div class="libernodes__mobile-active"></div>
               <div class="flex fl-column jc-c">
                 <p class="libernodes__items-subheading">IP Adress</p>
                 <p class="libernodes__ip-adress">192.228.420.74</p>
@@ -38,6 +40,7 @@ class Libernodes extends React.Component {
               </div>
             </div>
             <div class="dashboard__transaction-item flex jc-b">
+              <div class="libernodes__mobile-active"></div>
               <div class="flex fl-column jc-c">
                 <p class="libernodes__items-subheading">IP Adress</p>
                 <p class="libernodes__ip-adress">192.228.420.74</p>
@@ -52,6 +55,7 @@ class Libernodes extends React.Component {
               </div>
             </div>
             <div class="dashboard__transaction-item flex jc-b">
+              <div class="libernodes__mobile-active"></div>
               <div class="flex fl-column jc-c">
                 <p class="libernodes__items-subheading">IP Adress</p>
                 <p class="libernodes__ip-adress">192.228.420.74</p>
@@ -66,6 +70,7 @@ class Libernodes extends React.Component {
               </div>
             </div>
             <div class="dashboard__transaction-item flex jc-b">
+              <div class="libernodes__mobile-active"></div>
               <div class="flex fl-column jc-c">
                 <p class="libernodes__items-subheading">IP Adress</p>
                 <p class="libernodes__ip-adress">192.228.420.74</p>
@@ -80,6 +85,7 @@ class Libernodes extends React.Component {
               </div>
             </div>
             <div class="dashboard__transaction-item flex jc-b">
+              <div class="libernodes__mobile-active"></div>
               <div class="flex fl-column jc-c">
                 <p class="libernodes__items-subheading">IP Adress</p>
                 <p class="libernodes__ip-adress">192.228.420.74</p>
