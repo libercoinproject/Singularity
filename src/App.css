@@ -1300,3 +1300,23 @@ a {
     padding-left: 30px;
   }
 }
+
+/*White theme
+#root {
+  background-color: white !important
+}
+.Main {
+  color: black !important;
+}
+a {
+  color: black !important;
+}
+.dashboard__balance-block, .dashboard__transaction-item, .adresses__circle, .receive__wallet-block, .text-input, .voting__item, #settings__white, .settings__selector, .agora__market-items, .agora__range-slider, .agora__delivery-select, .lmessage__contact-item, .lmessage__message-item {
+  background-color: #e3e3e3;
+}
+.dashboard__balance-text, .lmessage__message-date, .libernodes__items-subheading, .text-input:valid {
+  color: #9f9f9f !important;
+}
+.exchange__price, .dashboard__trans-type, .adresses__card-amount, .adresses__adress, .adresses__wallet-name, .adresses__add-btn, .receive__btn, .receive__select-btn, .agora__product-tag-block, .settings__btn, .voting__btn-vote, .lmessage__contact-write-btn, .libernodes__btn {
+  color: white !important;
+}*/
