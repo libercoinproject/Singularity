@@ -8,10 +8,10 @@ class Agora extends React.Component {
   }
 
   agoraSliderChange() {
-    if (document.getElementById("agora__slider-block").className == "agora__slider-block agora__slider-not-active") {
+    if (document.getElementById("agora__slider-block").className === "agora__slider-block agora__slider-not-active") {
       document.getElementById("agora__slider-block").className = "agora__slider-block agora__slider-active";
       document.getElementById("agora__delivery").style.display = "block";
-    } else if (document.getElementById("agora__slider-block").className == "agora__slider-block agora__slider-active") {
+    } else if (document.getElementById("agora__slider-block").className === "agora__slider-block agora__slider-active") {
       document.getElementById("agora__slider-block").className = "agora__slider-block agora__slider-not-active";
       document.getElementById("agora__delivery").style.display = "none";
     }
@@ -40,7 +40,7 @@ class Agora extends React.Component {
               <div id="agora__delivery">
                 <h3 className="subheading agora__subheading">Delivery to</h3>
                 <div class="agora__delivery-select flex ali-c">
-                  <img src={USFlag} class="agora__country-flag"/>
+                  <img src={USFlag} class="agora__country-flag" alt=""/>
                   <p>United States</p>
                 </div>
               </div>

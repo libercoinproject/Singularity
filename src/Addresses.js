@@ -1,51 +1,79 @@
 import React from 'react';
+import axios from "axios";
 import BnWlogo from "./img/libercoin_BnW.png";
 //If you want to remove vertical alignments you should delete tags "flex jc-c fl-column"
 
 class Addresses extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      addresses: [],
+    }
+  }
+  getData = () => {
+    const host = 'http://localhost:8000/api/addresses';
+    axios.get(host)
+      .then((response) => {
+        console.log(response.data);
+        this.setState(() => {
+          return {
+            addresses: response.data,
+          };
+        });
+      })
+      .catch((error) => {
+
+      });
+  }
+  componentDidMount(){
+    this.getData();
+  }
+  render(){
+    return (
+      <div>
+        {this.state.addresses.length === 0 && <p>No one address was generated.</p>}
+        {this.state.addresses.map((addr) => 
+          <div className="adresses__cards" key={addr}>
+            <p className="adresses__card-amount">{addr.balance} LBR</p>
+            <p className="adresses__adress">{addr}</p>
+            <p className="adresses__wallet-name">{addr.name}</p>
+            <img src={BnWlogo} alt="" className="adresses__back-logo" />
+          </div>
+        )}
+      </div>
+    )
+  }
+}
+
+class AddressesPage extends React.Component {
+  onAdd = () => {
+    const host = 'http://localhost:8000/api/getnewaddress';
+    axios.get(host)
+      .then((response) => {
+        this.refs.Addresses.getData();
+      })
+      .catch((error) => {
+
+      });
+  }
   render() {
     return (
-        <div class="content">
-          <div class="adresses flex jc-c fl-column">
-            <div class="flex ali-c">
-              <h1 class="main-heading">Addresses</h1>
-              <p class="adresses__sorting"><span>Sort by:</span> /function</p>
+        <div className="content">
+          <div className="adresses flex jc-c fl-column">
+            <div className="flex ali-c">
+              <h1 className="main-heading">Addresses</h1>
+              {/*<p className="adresses__sorting"><span>Sort by:</span> /function</p>*/}
             </div>
-            <div class="flex">
-              <div class="adresses__card-flex-block">
-                <div class="adresses__cards">
-                  <p class="adresses__card-amount">123 LBR</p>
-                  <p class="adresses__adress">ZVZrbLt2Mmu3rSzcGxHoFNKo3shyC6K81M</p>
-                  <p class="adresses__wallet-name">Wallet Name</p>
-                  <img src={BnWlogo} alt="" class="adresses__back-logo"/>
-                </div>
-                <div class="adresses__cards">
-                  <p class="adresses__card-amount">123 LBR</p>
-                  <p class="adresses__adress">ZVZrbLt2Mmu3rSzcGxHoFNKo3shyC6K81M</p>
-                  <p class="adresses__wallet-name">Wallet Name</p>
-                  <img src={BnWlogo} alt="" class="adresses__back-logo"/>
-                </div>
-                <div class="adresses__cards">
-                  <p class="adresses__card-amount">123 LBR</p>
-                  <p class="adresses__adress">ZVZrbLt2Mmu3rSzcGxHoFNKo3shyC6K81M</p>
-                  <p class="adresses__wallet-name">Wallet Name</p>
-                  <img src={BnWlogo} alt="" class="adresses__back-logo"/>
-                </div>
-                <div class="adresses__cards">
-                  <p class="adresses__card-amount">123 LBR</p>
-                  <p class="adresses__adress">ZVZrbLt2Mmu3rSzcGxHoFNKo3shyC6K81M</p>
-                  <p class="adresses__wallet-name">Wallet Name</p>
-                  <img src={BnWlogo} alt="" class="adresses__back-logo"/>
-                </div>
-              </div>
-              <div class="adresses__add-btn-flex-block">
-                <div class="adresses__add-btn">+</div>
+            <div className="flex">
+            <Addresses className="adresses__card-flex-block" ref="Addresses" />
+              <div className="adresses__add-btn-flex-block">
+                <div className="adresses__add-btn" onClick={this.onAdd}>+</div>
               </div>
             </div>
-            <div class="adresses__circles-block flex jc-c">
-              <div class="adresses__circle"></div>
-              <div class="adresses__circle"></div>
-              <div class="adresses__circle"></div>
+            <div className="adresses__circles-block flex jc-c">
+              <div className="adresses__circle"></div>
+              <div className="adresses__circle"></div>
+              <div className="adresses__circle"></div>
             </div>
           </div>
         </div>
@@ -53,4 +81,4 @@ class Addresses extends React.Component {
   }
 }
 
-export default Addresses;
+export {AddressesPage, Addresses};

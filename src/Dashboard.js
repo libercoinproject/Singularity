@@ -4,89 +4,65 @@ import axios from 'axios';
 class Dashboard extends React.Component {
   constructor(props){
     super(props);
-    this.balance = 0;
+    this.state = {
+      balance: 0,
+      pending: 0,
+      lastTransactions: [],
+    };
+  }
+  getData = () => {
+    const host = 'http://localhost:8000/api/walletinfo';
+    axios.get(host)
+      .then((response) => {
+        this.setState(() => {
+          return {
+            balance: response.data.balance,
+            pending: response.data.unconfirmed_balance,
+          };
+        });
+      })
+      .catch((error) => {
+
+      });
   }
   componentDidMount(){
-    const username = 'user';
-    const password = 'password';
-    const port = '6215';
-    const url = 'http://127.0.0.1:' + port;
-    const credentials = btoa(username + ':' + password);
-    const basicAuth = 'Basic ' + credentials;
-    axios.post(url, {
-      data: { "jsonrpc": "1.0", "id": "axiostest", "method": "getinfo", "params": [] },
-      headers: { 
-        'Authorization': + basicAuth,
-        'content-type': 'text/plain',
-      }
-    }).then((response) => {
-      console.log(response);
-    }).catch((error) => {
-      console.log(error);
-    });
+    this.getData();
   }
   render() {
       return (
-              <div class="dashboard">
-                <div class="content">
-                  <h1 class="main-heading">Dashboard</h1>
-                  <div class="dashboard__price-flex-block">
-                    <div class="dashboard__balance-block">
-                      <p class="dashboard__balance-text">Total Balance</p>
-                      <p class="dashboard__balance">123 LBR</p>
-                      <p class="dashboard__balance-text">9.45 LBR pending</p>
+              <div className="dashboard">
+                <div className="content">
+                  <h1 className="main-heading">Dashboard</h1>
+                  <div className="dashboard__price-flex-block">
+                    <div className="dashboard__balance-block">
+                      <p className="dashboard__balance-text">Total Balance</p>
+                      <p className="dashboard__balance">{this.state.balance} LBR</p>
+                      {this.state.pending > 0 && <p className="dashboard__balance-text">{this.state.pending} LBR pending</p>}
                     </div>
-                    <div class="dashboard__price-exchange-column-block">
-                      <div class="dashboard__price-exhange-block">
-                        <p class="exchange__price">1245$</p>
+                    <div className="dashboard__price-exchange-column-block">
+                      <div className="dashboard__price-exhange-block">
+                        <p className="exchange__price">0 $</p>
                         <span></span>
                       </div>
-                      <div class="dashboard__price-exhange-block">
-                        <p class="exchange__price">1091.32€</p>
+                      <div className="dashboard__price-exhange-block">
+                        <p className="exchange__price">0 €</p>
                         <span></span>
                       </div>
-                      <div class="dashboard__price-exhange-block">
-                        <p class="exchange__price">0.12875 BTC</p>
+                      <div className="dashboard__price-exhange-block">
+                        <p className="exchange__price">0 BTC</p>
                         <span></span>
                       </div>
                     </div>
                   </div>
-                  <h1 class="dashboard__heading">Transactions</h1>
-                  <div class="dashboard__transaction-item">
-                    <div class="dashboard__trans-type-block">
-                      <p class="dashboard__trans-type">Send</p>
+                  <h1 className="dashboard__heading">Last transactions</h1>
+                  {this.state.lastTransactions.length === 0 && <p>No any transactions yet.</p>}
+                  {/*<div className="dashboard__transaction-item">
+                    <div className="dashboard__trans-type-block">
+                      <p className="dashboard__trans-type">Send</p>
                     </div>
-                    <p class="dashboard__wallet-adress">ZVZrbLt2Mmu3rSzcGxHoFNKo3shyC6K81M</p>
-                    <p class="dashboard__trans-amount">12.5 LBR</p>
-                  </div>
-                  <div class="dashboard__transaction-item">
-                    <div class="dashboard__trans-type-block">
-                      <p class="dashboard__trans-type">Receive</p>
-                    </div>
-                    <p class="dashboard__wallet-adress">ZVZrbLt2Mmu3rSzcGxHoFNKo3shyC6K81M</p>
-                    <p class="dashboard__trans-amount">5.4 LBR</p>
-                  </div>
-                  <div class="dashboard__transaction-item">
-                    <div class="dashboard__trans-type-block">
-                      <p class="dashboard__trans-type">Send</p>
-                    </div>
-                    <p class="dashboard__wallet-adress">ZVZrbLt2Mmu3rSzcGxHoFNKo3shyC6K81M</p>
-                    <p class="dashboard__trans-amount">206 LBR</p>
-                  </div>
-                  <div class="dashboard__transaction-item">
-                    <div class="dashboard__trans-type-block">
-                      <p class="dashboard__trans-type">Send</p>
-                    </div>
-                    <p class="dashboard__wallet-adress">ZVZrbLt2Mmu3rSzcGxHoFNKo3shyC6K81M</p>
-                    <p class="dashboard__trans-amount">22.12 LBR</p>
-                  </div>
-                  <div class="dashboard__transaction-item">
-                    <div class="dashboard__trans-type-block">
-                      <p class="dashboard__trans-type">Receive</p>
-                    </div>
-                    <p class="dashboard__wallet-adress">ZVZrbLt2Mmu3rSzcGxHoFNKo3shyC6K81M</p>
-                    <p class="dashboard__trans-amount">100.01 LBR</p>
-                  </div>
+                    <p className="dashboard__wallet-adress">ZVZrbLt2Mmu3rSzcGxHoFNKo3shyC6K81M</p>
+                    <p className="dashboard__trans-amount">12.5 LBR</p>
+                  </div>*/}
                 </div>
               </div>
       );

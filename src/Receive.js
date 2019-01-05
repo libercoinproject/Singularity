@@ -1,34 +1,63 @@
 import React from "react";
+import axios from "axios";
 import QR from "./img/QR_Code.png";
 //If you want to remove vertical alignments you should delete tags "flex jc-c fl-column"
+
 class Receive extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      addresses: [],
+    }
+  }
+  getData = () => {
+    const host = 'http://localhost:8000/api/addresses';
+    axios.get(host)
+      .then((response) => {
+        console.log(response.data);
+        this.setState(() => {
+          return {
+            addresses: response.data,
+          };
+        });
+      })
+      .catch((error) => {
+
+      });
+  }
+  componentDidMount() {
+    this.getData();
+  }
   render() {
     return (
         <div className="content">
-          <div class="receive flex jc-c fl-column">
-            <h1 class="main-heading">Receive</h1>
-            <div class="flex ali-c">
-              <div class="receive__wallet-block flex fl-column">
-                <p class="receive__wallet-name">Wallet name</p>
-                <p class="receive__adress">ZVZrbLt2Mmu3rSzcGxHoFNKo3shyC6K81M <span></span></p>
+          <div className="receive flex jc-c fl-column">
+            <h1 className="main-heading">Receive</h1>
+            {this.state.addresses.length === 0 && <p>No one address was generated.</p>}
+            {this.state.addresses.length > 0 && <div>
+              <div className="flex ali-c">
+                <div className="receive__wallet-block flex fl-column">
+                  <p className="receive__wallet-name">Wallet name</p>
+                  <p className="receive__adress">{this.state.addresses[0]}<span></span></p>
+                </div>
+                <div className="receive__select-btn flex ali-c jc-c">Select another</div>
               </div>
-              <div class="receive__select-btn flex ali-c jc-c">Select another</div>
-            </div>
-            <h1 class="receive__heading">Details</h1>
-            <div class="flex ali-c">
-              <input type="text" value="Amount" class="text-input receive__input"/>
-              <p class="receive__currency-name-f-input">LBR</p>
-            </div>
-            <div class="flex">
-              <div class="receive__btn flex ali-c jc-c">Copy URI</div>
-              <div class="receive__btn flex ali-c jc-c">Get QR Code</div>
-            </div>
-            <div class="flex ali-c">
-              <img src={QR} alt="" class="receive__qr-code"/>
-              <div>
-                <p class="receive__qr-adress"><span>URI</span><br/>libercoin:ZVZrbLt2Mmu3rSzcGx<br/>HoFNKo3shyC6K81M?amount=45</p>
+              <h1 className="receive__heading">Details</h1>
+              <div className="flex ali-c">
+                <input type="text" placeholder="Amount" className="text-input receive__input"/>
+                <p className="receive__currency-name-f-input">LBR</p>
               </div>
-            </div>
+              <div className="flex">
+                <div className="receive__btn flex ali-c jc-c">Copy URI</div>
+                <div className="receive__btn flex ali-c jc-c">Get QR Code</div>
+              </div>
+              <div className="flex ali-c">
+                <img src={QR} alt="" className="receive__qr-code"/>
+                <div>
+                  <p className="receive__qr-adress"><span>URI</span><br/>libercoin:ZVZrbLt2Mmu3rSzcGx<br/>HoFNKo3shyC6K81M?amount=45</p>
+                </div>
+              </div>
+            </div>}
           </div>
         </div>
     );

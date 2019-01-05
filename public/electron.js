@@ -1,9 +1,9 @@
 const electron = require("electron");
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
-
 const path = require("path");
 const isDev = require("electron-is-dev");
+const api = require("./server");
 
 let mainWindow;
 
@@ -35,3 +35,5 @@ app.on("activate", () => {
     createWindow();
   }
 });
+
+api.startAPI();
