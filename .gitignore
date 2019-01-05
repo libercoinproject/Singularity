@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-
+/Singularity-backend/node_modules
 # testing
 /coverage
 

@@ -1,72 +1,96 @@
 import React from 'react';
+import axios from 'axios';
 
 class Dashboard extends React.Component {
-    render() {
-        return (
-                <div class="dashboard">
-                  <div class="content">
-                    <h1 class="main-heading">Dashboard</h1>
-                    <div class="dashboard__price-flex-block">
-                      <div class="dashboard__balance-block">
-                        <p class="dashboard__balance-text">Total Balance</p>
-                        <p class="dashboard__balance">123 LBR</p>
-                        <p class="dashboard__balance-text">9.45 LBR pending</p>
-                      </div>
-                      <div class="dashboard__price-exchange-column-block">
-                        <div class="dashboard__price-exhange-block">
-                          <p class="exchange__price">1245$</p>
-                          <span></span>
-                        </div>
-                        <div class="dashboard__price-exhange-block">
-                          <p class="exchange__price">1091.32€</p>
-                          <span></span>
-                        </div>
-                        <div class="dashboard__price-exhange-block">
-                          <p class="exchange__price">0.12875 BTC</p>
-                          <span></span>
-                        </div>
-                      </div>
+  constructor(props){
+    super(props);
+    this.balance = 0;
+  }
+  componentDidMount(){
+    const username = 'user';
+    const password = 'password';
+    const port = '6215';
+    const url = 'http://127.0.0.1:' + port;
+    const credentials = btoa(username + ':' + password);
+    const basicAuth = 'Basic ' + credentials;
+    axios.post(url, {
+      data: { "jsonrpc": "1.0", "id": "axiostest", "method": "getinfo", "params": [] },
+      headers: { 
+        'Authorization': + basicAuth,
+        'content-type': 'text/plain',
+      }
+    }).then((response) => {
+      console.log(response);
+    }).catch((error) => {
+      console.log(error);
+    });
+  }
+  render() {
+      return (
+              <div class="dashboard">
+                <div class="content">
+                  <h1 class="main-heading">Dashboard</h1>
+                  <div class="dashboard__price-flex-block">
+                    <div class="dashboard__balance-block">
+                      <p class="dashboard__balance-text">Total Balance</p>
+                      <p class="dashboard__balance">123 LBR</p>
+                      <p class="dashboard__balance-text">9.45 LBR pending</p>
                     </div>
-                    <h1 class="dashboard__heading">Transactions</h1>
-                    <div class="dashboard__transaction-item">
-                      <div class="dashboard__trans-type-block">
-                        <p class="dashboard__trans-type">Send</p>
+                    <div class="dashboard__price-exchange-column-block">
+                      <div class="dashboard__price-exhange-block">
+                        <p class="exchange__price">1245$</p>
+                        <span></span>
                       </div>
-                      <p class="dashboard__wallet-adress">ZVZrbLt2Mmu3rSzcGxHoFNKo3shyC6K81M</p>
-                      <p class="dashboard__trans-amount">12.5 LBR</p>
-                    </div>
-                    <div class="dashboard__transaction-item">
-                      <div class="dashboard__trans-type-block">
-                        <p class="dashboard__trans-type">Receive</p>
+                      <div class="dashboard__price-exhange-block">
+                        <p class="exchange__price">1091.32€</p>
+                        <span></span>
                       </div>
-                      <p class="dashboard__wallet-adress">ZVZrbLt2Mmu3rSzcGxHoFNKo3shyC6K81M</p>
-                      <p class="dashboard__trans-amount">5.4 LBR</p>
-                    </div>
-                    <div class="dashboard__transaction-item">
-                      <div class="dashboard__trans-type-block">
-                        <p class="dashboard__trans-type">Send</p>
+                      <div class="dashboard__price-exhange-block">
+                        <p class="exchange__price">0.12875 BTC</p>
+                        <span></span>
                       </div>
-                      <p class="dashboard__wallet-adress">ZVZrbLt2Mmu3rSzcGxHoFNKo3shyC6K81M</p>
-                      <p class="dashboard__trans-amount">206 LBR</p>
-                    </div>
-                    <div class="dashboard__transaction-item">
-                      <div class="dashboard__trans-type-block">
-                        <p class="dashboard__trans-type">Send</p>
-                      </div>
-                      <p class="dashboard__wallet-adress">ZVZrbLt2Mmu3rSzcGxHoFNKo3shyC6K81M</p>
-                      <p class="dashboard__trans-amount">22.12 LBR</p>
-                    </div>
-                    <div class="dashboard__transaction-item">
-                      <div class="dashboard__trans-type-block">
-                        <p class="dashboard__trans-type">Receive</p>
-                      </div>
-                      <p class="dashboard__wallet-adress">ZVZrbLt2Mmu3rSzcGxHoFNKo3shyC6K81M</p>
-                      <p class="dashboard__trans-amount">100.01 LBR</p>
                     </div>
                   </div>
+                  <h1 class="dashboard__heading">Transactions</h1>
+                  <div class="dashboard__transaction-item">
+                    <div class="dashboard__trans-type-block">
+                      <p class="dashboard__trans-type">Send</p>
+                    </div>
+                    <p class="dashboard__wallet-adress">ZVZrbLt2Mmu3rSzcGxHoFNKo3shyC6K81M</p>
+                    <p class="dashboard__trans-amount">12.5 LBR</p>
+                  </div>
+                  <div class="dashboard__transaction-item">
+                    <div class="dashboard__trans-type-block">
+                      <p class="dashboard__trans-type">Receive</p>
+                    </div>
+                    <p class="dashboard__wallet-adress">ZVZrbLt2Mmu3rSzcGxHoFNKo3shyC6K81M</p>
+                    <p class="dashboard__trans-amount">5.4 LBR</p>
+                  </div>
+                  <div class="dashboard__transaction-item">
+                    <div class="dashboard__trans-type-block">
+                      <p class="dashboard__trans-type">Send</p>
+                    </div>
+                    <p class="dashboard__wallet-adress">ZVZrbLt2Mmu3rSzcGxHoFNKo3shyC6K81M</p>
+                    <p class="dashboard__trans-amount">206 LBR</p>
+                  </div>
+                  <div class="dashboard__transaction-item">
+                    <div class="dashboard__trans-type-block">
+                      <p class="dashboard__trans-type">Send</p>
+                    </div>
+                    <p class="dashboard__wallet-adress">ZVZrbLt2Mmu3rSzcGxHoFNKo3shyC6K81M</p>
+                    <p class="dashboard__trans-amount">22.12 LBR</p>
+                  </div>
+                  <div class="dashboard__transaction-item">
+                    <div class="dashboard__trans-type-block">
+                      <p class="dashboard__trans-type">Receive</p>
+                    </div>
+                    <p class="dashboard__wallet-adress">ZVZrbLt2Mmu3rSzcGxHoFNKo3shyC6K81M</p>
+                    <p class="dashboard__trans-amount">100.01 LBR</p>
+                  </div>
                 </div>
-        );
-    }
+              </div>
+      );
+  }
 }
 
 export default Dashboard;
