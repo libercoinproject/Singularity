@@ -58,22 +58,24 @@ class AddressesPage extends React.Component {
   }
   render() {
     return (
-        <div className="content">
-          <div className="adresses flex jc-c fl-column">
-            <div className="flex ali-c">
-              <h1 className="main-heading">Addresses</h1>
-              {/*<p className="adresses__sorting"><span>Sort by:</span> /function</p>*/}
-            </div>
-            <div className="flex">
-            <Addresses className="adresses__card-flex-block" ref="Addresses" />
-              <div className="adresses__add-btn-flex-block">
-                <div className="adresses__add-btn" onClick={this.onAdd}>+</div>
+        <div className="adresses">
+          <div className="content">
+            <div className="adresses flex jc-c fl-column">
+              <div className="flex ali-c">
+                <h1 className="main-heading">Addresses</h1>
+                {/*<p className="adresses__sorting"><span>Sort by:</span> /function</p>*/}
               </div>
-            </div>
-            <div className="adresses__circles-block flex jc-c">
-              <div className="adresses__circle"></div>
-              <div className="adresses__circle"></div>
-              <div className="adresses__circle"></div>
+              <div className="flex">
+              <Addresses className="adresses__card-flex-block" ref="Addresses" />
+                <div className="adresses__add-btn-flex-block">
+                  <div className="adresses__add-btn" onClick={this.onAdd}>+</div>
+                </div>
+              </div>
+              <div className="adresses__circles-block flex jc-c">
+                <div className="adresses__circle"></div>
+                <div className="adresses__circle"></div>
+                <div className="adresses__circle"></div>
+              </div>
             </div>
           </div>
         </div>

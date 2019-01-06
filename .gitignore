@@ -5,7 +5,7 @@
 /Singularity-backend/node_modules
 # testing
 /coverage
-
+/core/*
 # production
 /build
 /dist

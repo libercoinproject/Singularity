@@ -4,8 +4,8 @@ import { Addresses } from "./Addresses";
 class Send extends React.Component {
   render() {
     return (
-        <div className="content">
-          <div className="send">
+        <div className="send">
+          <div className="content">
             <h1 className="main-heading">Send</h1>
           <Addresses className="send__flex-cards" />
             <div className="adresses__circles-block flex jc-c">
@@ -21,7 +21,7 @@ class Send extends React.Component {
                 <p className="receive__currency-name-f-input">LBR</p>
               </div>
               <h2 className="send__subheading">Comments</h2>
-              <textarea cols="50" rows="10" className="text-input send__textarea"></textarea>
+              <textarea cols="50" rows="5" className="text-input send__textarea"></textarea>
               <div className="receive__btn flex ali-c jc-c">Confirm</div>
             </div>
           </div>
