@@ -3,16 +3,9 @@ const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 const path = require("path");
 const isDev = require("electron-is-dev");
-const WalletService = require('./WalletService.js').service;
+const apiService = require('./ApiService.js').service;
 
-/*
-  WalletService in dev
-  const daemon = new WalletService('../../wallet713/wallet713');
-  daemon.getAddress();
-  daemon.getBalance();
-  daemon.getState().then((data) => console.log(data));
-*/
-
+apiService.listen(5000, 'localhost'); //start wallet api
 
 let mainWindow;
 

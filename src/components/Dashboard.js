@@ -1,13 +1,22 @@
 import React from 'react';
+import { ApiService } from '../services/ApiService.js';
 
 class Dashboard extends React.Component {
   constructor(props){
     super(props);
+    this.apiService = new ApiService();
     this.state = {
       balance: 0,
       pending: 0,
       lastTransactions: [],
     };
+  };
+
+  componentDidMount(){
+    (async () => {
+      const data = await this.apiService.getWalletStat();
+      await this.setState({balance: data.balance.total, pending: data.balance.awaiting});
+    })(); 
   };
 
   render() {

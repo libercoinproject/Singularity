@@ -1,13 +1,28 @@
 import React, { Component } from 'react';
 import BnWlogo from "../img/libercoin_BnW.png";
+import { ApiService } from '../services/ApiService.js';
 //If you want to remove vertical alignments you should delete tags "flex jc-c fl-column"
 
 class Addresses extends Component {
   constructor(props){
     super(props);
+    this.apiService = new ApiService();
     this.state = {
       addresses: [],
     };
+  };
+
+  componentDidMount(){
+    (async () => {
+      const data = await this.apiService.getWalletStat();
+      const newAddresses = [];
+      newAddresses.push(data.walletAddress.address);
+      await this.setState(() => {
+        return {
+          addresses: newAddresses, 
+        };
+      });
+    })(); 
   };
 
   render(){
