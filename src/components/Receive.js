@@ -1,33 +1,15 @@
-import React from "react";
-import axios from "axios";
-import QR from "./img/QR_Code.png";
+import React, { Component } from "react";
+import QR from "../img/QR_Code.png";
 //If you want to remove vertical alignments you should delete tags "flex jc-c fl-column"
 
-class Receive extends React.Component {
+class Receive extends Component {
   constructor(props) {
     super(props);
     this.state = {
       addresses: [],
-    }
-  }
-  getData = () => {
-    const host = 'http://localhost:8000/api/addresses';
-    axios.get(host)
-      .then((response) => {
-        console.log(response.data);
-        this.setState(() => {
-          return {
-            addresses: response.data,
-          };
-        });
-      })
-      .catch((error) => {
+    };
+  };
 
-      });
-  }
-  componentDidMount() {
-    this.getData();
-  }
   render() {
     return (
         <div className="content">

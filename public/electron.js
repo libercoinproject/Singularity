@@ -3,7 +3,16 @@ const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 const path = require("path");
 const isDev = require("electron-is-dev");
-const api = require("./server");
+const WalletService = require('./WalletService.js').service;
+
+/*
+  WalletService in dev
+  const daemon = new WalletService('../../wallet713/wallet713');
+  daemon.getAddress();
+  daemon.getBalance();
+  daemon.getState().then((data) => console.log(data));
+*/
+
 
 let mainWindow;
 
@@ -35,5 +44,3 @@ app.on("activate", () => {
     createWindow();
   }
 });
-
-api.startAPI();

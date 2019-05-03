@@ -1,31 +1,31 @@
 @font-face {
     font-family: "GothamPro";
-    src: url("./fonts/GothamPro.ttf");
+    src: url("../fonts/GothamPro.ttf");
 }
 
 @font-face {
   font-family: "GothamMedium";
-  src: url("./fonts/GothamPro-Medium.ttf");
+  src: url("../fonts/GothamPro-Medium.ttf");
 }
 
 @font-face {
   font-family: "GothamBold";
-  src: url("./fonts/GothamPro_Bold.ttf");
+  src: url("../fonts/GothamPro_Bold.ttf");
 }
 
 @font-face {
   font-family: "GothamLight";
-  src: url("./fonts/GothamPro-Light.ttf");
+  src: url("../fonts/GothamPro-Light.ttf");
 }
 
 @font-face {
   font-family: "FASolid";
-  src: url("./fonts/fa-solid-900.ttf");
+  src: url("../fonts/fa-solid-900.ttf");
 }
 
 @font-face {
   font-family: "FARegular";
-  src: url("./fonts/fa-regular-400.ttf");
+  src: url("../fonts/fa-regular-400.ttf");
 }
 
 h1,h2,h3,h4 {
@@ -917,7 +917,7 @@ html, body, .viewport {
 }
 
 .agora__product-img {
-  background-image: url(./img/tomatoes.jpg);
+  background-image: url(../img/tomatoes.jpg);
   -webkit-background-size: cover;
   background-size: cover;
   background-position: center;

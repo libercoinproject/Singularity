@@ -12,7 +12,7 @@ import Agora from "./Agora";
 import Libernodes from "./Libernodes";
 import Status from "./Netstatus";
 import Settings from "./Settings";
-import logo from "./img/libercoin_logo.png";
+import logo from "../img/libercoin_logo.png";
 const styleLogo = {
   display: 'flex',
   alignItems: 'center',
@@ -32,14 +32,6 @@ class Main extends React.Component {
                   <Link to="/addresses"><p className="main__menu-list-item"><span></span>My addresses</p></Link>
                   <Link to="/receive"><p className="main__menu-list-item"><span></span>Receive</p></Link>
                   <Link to="/send"><p className="main__menu-list-item"><span></span>Send</p></Link>
-                  {/*<Link to="/obfuscation"><p className="main__menu-list-item"><span></span>Obfuscation</p></Link>
-                  <Link to="/transactions"><p className="main__menu-list-item"><span></span>Transactions</p></Link>
-                  <Link to="/voting"><p className="main__menu-list-item"><span></span>Voting</p></Link>
-                  <Link to="/lmessage"><p className="main__menu-list-item"><span></span>LMessage</p></Link>
-                  <Link to="/agora"><p className="main__menu-list-item"><span></span>Agora</p></Link>
-                  <Link to="/libernodes"><p className="main__menu-list-item"><span></span>Libernodes</p></Link>
-                  <Link to="/status"><p className="main__menu-list-item"><span></span>Network Status</p></Link>
-                  <Link to="/settings"><p className="main__menu-list-item"><span></span>Settings</p></Link>*/}
                 </div>
                   <Switch>
                     <Route path="/" component={Dashboard} exact={true}/>

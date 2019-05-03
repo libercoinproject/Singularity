@@ -1,5 +1,5 @@
 import React from "react";
-import USFlag from "./img/us-flag.svg";
+import USFlag from "../img/us-flag.svg";
 
 class Agora extends React.Component {
   constructor(props) {

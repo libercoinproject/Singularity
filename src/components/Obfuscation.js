@@ -1,5 +1,5 @@
 import React from "react";
-import BnWlogo from "./img/libercoin_BnW.png";
+import BnWlogo from "../img/libercoin_BnW.png";
 //If you want to remove vertical alignments you should delete tags "flex jc-c fl-column"
 
 class Obfuscation extends React.Component {
