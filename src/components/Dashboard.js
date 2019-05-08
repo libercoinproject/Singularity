@@ -14,8 +14,8 @@ class Dashboard extends React.Component {
 
   componentDidMount(){
     (async () => {
-      const data = await this.apiService.getWalletStat();
-      await this.setState({balance: data.balance.total, pending: data.balance.awaiting});
+      // const data = await this.apiService.getWalletStat();
+      this.setState({balance: '0.0000000', pending: '0.0000000'});
     })(); 
   };
 

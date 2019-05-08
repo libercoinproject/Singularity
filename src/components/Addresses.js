@@ -14,15 +14,15 @@ class Addresses extends Component {
 
   componentDidMount(){
     (async () => {
-      const data = await this.apiService.getWalletStat();
-      const newAddresses = [];
-      newAddresses.push(data.walletAddress.address);
-      await this.setState(() => {
+      // const data = await this.apiService.getWalletStat();
+      // const newAddresses = [];
+      // newAddresses.push(data.walletAddress.address);
+      this.setState(() => {
         return {
-          addresses: newAddresses, 
+          addresses: [],
         };
       });
-    })(); 
+    })();
   };
 
   render(){
