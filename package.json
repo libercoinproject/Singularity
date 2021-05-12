@@ -6,7 +6,7 @@
   "private": true,
   "dependencies": {
     "ansi-parser": "^3.2.9",
-    "chart.js": "^2.7.3",
+    "chart.js": "^2.9.4",
     "cors": "^2.8.5",
     "cross-env": "5.1.6",
     "electron-is-dev": "0.3.0",
